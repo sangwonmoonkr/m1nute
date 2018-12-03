@@ -1,0 +1,70 @@
+<div id="wrapper" class="divided">
+  <!-- Six -->
+  <!-- <form method="patch" action="#"> -->
+  <%= form_for @user do |f| %>
+
+  <section class="wrapper style1 align-center">
+    <div class="inner">
+      <h2>상대방에게 궁금한 질문유형을 골라보세요!</h2>
+
+        <p style="font-weight: bold;">Small talk</p>
+        <div class="items style1 medium onscroll-fade-in">
+          <% 3.times do |i| %>
+            <section class="category_normal">
+              <!-- <span class="icon style2 major fa-diamond"></span>
+              <h3><%#= Category.where(id: i+1).first.text %></h3> -->
+              <% category = Category.where(id: i+1).first %>
+              <!-- <input type="radio" id="samll-talk-<%#= category %>" name="samll-talk" checked=""> -->
+              <%= f.radio_button :category_0_id, category.id, checked: (i == 0 ? true : false) %>
+              <%= f.label :"category_0_id_#{category.id}" , category.text %>
+              <!-- <label for="samll-talk-<%#= category %>"><%#= category %></label> -->
+            </section>
+          <% end %>
+        </div>
+
+        </br>
+        <p style="font-weight: bold;">Personal Question</p>
+        <div class="items style1 medium onscroll-fade-in">
+          <% 3.times do |i| %>
+            <section class="category_normal">
+              <!-- <span class="icon style2 major fa-diamond"></span>
+              <h3><%#= Category.where(id: i+4).first.text %></h3> -->
+              <% category = Category.where(id: i+4).first %>
+              <!-- <input type="radio" id="personal-<%#= category %>" name="personal" checked=""> -->
+              <%= f.radio_button :category_1_id, category.id, checked: (i == 0 ? true : false) %>
+              <%= f.label :"category_1_id_#{category.id}" , category.text %>
+              <!-- <label for="personal-<%#= category %>"><%#= category %></label> -->
+            </section>
+          <% end %>
+        </div>
+
+        </br>
+        <p style="font-weight: bold;">Special Question</p>
+        <div class="items style1 medium onscroll-fade-in">
+          <% 3.times do |i| %>
+            <section class="category_normal">
+              <!-- <span class="icon style2 major fa-diamond"></span>
+              <h3><%#= Category.where(id: i+7).first.text %></h3> -->
+              <% category = Category.where(id: i+7).first %>
+              <!-- <input type="radio" id="special-<%#= category %>" name="special" checked=""> -->
+              <%= f.radio_button :category_2_id, category.id, checked: (i == 0 ? true : false) %>
+              <%= f.label :"category_2_id_#{category.id}" , category.text %>
+              <!-- <label for="special-<%#= category %>"><%#= category %></label> -->
+            </section>
+          <% end %>
+        </div>
+
+    </div>
+  </section>
+
+  <section class="wrapper style1 align-center">
+  <div class="inner medium">
+    <ul class="actions special">
+      <li><input type="submit" name="submit" class="category_submit" id="submit" value="선택 완료"/></li>
+    </ul>
+  </div>
+  </section>
+
+  <% end %>
+  <!-- </form> -->
+</div>

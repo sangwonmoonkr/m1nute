@@ -1,0 +1,51 @@
+<div class="index align-left">
+  <section>
+    <header>
+      <h3>QuestionType1</h3>
+    </header>
+    <div class="content">
+
+      <h2>#<%= @question.text %></h2>
+      <hr>
+
+      <div id="wrapper" class="divided">
+        <section class="wrapper style1 align-center">
+          <div class="inner medium">
+            <%= form_for @user do |f| %>
+              <div class="fields">
+                <div class="field half">
+                  <!-- <span class="icon style2 major fa-cog"></span>
+                  <label for="name">Yes</label> -->
+                  <% if @user.gender == "female" %>
+                  <%= f.radio_button :"answer_#{@female_question_index - 1}_id", "yes", checked: true %>
+                  <%= f.label :"answer_#{@female_question_index - 1}_id_yes" , "Yes" %>
+                  <% else %>
+                  <%= f.radio_button :"answer_#{@male_question_index - 1}_id", "yes", checked: true %>
+                  <%= f.label :"answer_#{@male_question_index - 1}_id_yes" , "Yes" %>
+                  <% end %>
+                </div>
+                <div class="field half">
+                  <!-- <span class="icon style2 major fa-paper-plane"></span>
+                  <label for="email">No</label> -->
+                  <% if @user.gender == "female" %>
+                  <%= f.radio_button :"answer_#{@female_question_index - 1}_id", "no", checked: false %>
+                  <%= f.label :"answer_#{@female_question_index - 1}_id_no" , "No" %>
+                  <% else %>
+                  <%= f.radio_button :"answer_#{@male_question_index - 1}_id", "no", checked: false %>
+                  <%= f.label :"answer_#{@male_question_index - 1}_id_no" , "No" %>
+                  <% end %>
+                </div>
+
+              </div>
+              <ul class="actions special">
+                <li><input type="submit" name="submit" id="submit" value="다음"/></li>
+              </ul>
+            <% end %>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </section>
+
+</div>

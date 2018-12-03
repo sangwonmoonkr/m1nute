@@ -1,0 +1,45 @@
+<div class="index align-left">
+  <section>
+    <header>
+      <h3>QuestionType3</h3>
+    </header>
+    <div class="content">
+
+      <h2>#<%= @question.text %></h2>
+      <hr>
+
+      <div id="wrapper" class="divided">
+        <section class="wrapper style1 align-center">
+          <div class="inner medium">
+            <%= form_for @user do |f| %>
+
+              <div class="fields">
+                <div class="content">
+                  <ol class="alt">
+                    <% @question.answer.order(:id).each_with_index do |answer, i| %>
+                    <li>
+                      <% if @user.gender == "female" %>
+                        <%= f.radio_button :"answer_#{@female_question_index}_id", answer.id, checked: i == 0 ? true : false %>
+                        <%= f.label :"answer_#{@female_question_index}_id_#{answer.id}" , answer.text %>
+                      <% else %>
+                        <%= f.radio_button :"answer_#{@male_question_index}_id", answer.id, checked: i == 0 ? true : false %>
+                        <%= f.label :"answer_#{@male_question_index}_id_#{answer.id}" , answer.text %>
+                      <% end %>
+                    </li>
+                    <% end %>
+                  </ol>
+                </div>
+              </div>
+              <ul class="actions special">
+                <li><input type="submit" name="submit" id="submit" value="다음"/></li>
+              </ul>
+
+            <% end %>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </section>
+
+</div>

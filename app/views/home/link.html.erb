@@ -1,0 +1,48 @@
+<style>
+body, html { 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.bgimg {
+    border: 0;
+    padding: 0; 
+    background-image: url('/front1.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<div class="bgimg">
+<div id="wrapper" class="divided">
+
+
+  <section class="wrapper style1 align-center">
+    <div class="inner medium">
+      <h2>M1nute</h2>
+      <p>환영합니다 ~~ 서비스 간략 설명</p>
+
+        <div class="fields">
+
+          <div class="field">
+            <label >주선자</label>
+            <input class="link_gender" type="text" id="center" value="<%= @domain %>/answer/output_r" />
+          </div>
+          <div class="field">
+            <label >여자</label>
+            <!-- <input class="link_gender" type="text" id="female" value="www.design_1minute.co.kr/category/choose?gender=female" /> -->
+            <input class="link_gender" type="text" id="female" value="<%= @domain %>/user/2/edit" />
+          </div>
+          <div class="field">
+            <label >남자</label>
+            <!-- <input class="link_gender" type="text" id="male" value="www.design_1minute.co.kr/category/choose?gender=male" /> -->
+            <input class="link_gender" type="text" id="male" value="<%= @domain %>/user/3/edit" />
+          </div>
+
+        </div>
+
+    </div>
+  </section>
+
+</div>
+</div>

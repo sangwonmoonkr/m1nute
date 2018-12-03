@@ -1,0 +1,58 @@
+<div id="wrapper" class="divided">
+  <!-- Six -->
+  <section class="wrapper style1 align-center">
+    <div class="inner">
+      <h2>상대방에게 궁금한 질문유형을 골라보세요!</h2>
+
+      
+      <p style="font-weight: bold;">Small talk</p>
+      <div class="items style1 medium onscroll-fade-in">
+        <% 3.times do |i| %>
+          <section class="category_normal">
+            <span class="icon style2 major fa-diamond"></span>
+            <h3><%= Category.where(id: i+1).first.text %></h3>
+          </section>
+        <% end %>
+      </div>
+
+      </br>
+      <p style="font-weight: bold;">Personal Question</p>
+      <div class="items style1 medium onscroll-fade-in">
+        <% 3.times do |i| %>
+          <section class="category_normal">
+            <span class="icon style2 major fa-diamond"></span>
+            <h3><%= Category.where(id: i+4).first.text %></h3>
+          </section>
+        <% end %>
+      </div>
+
+    </br>
+    <p style="font-weight: bold;">Special Question</p>
+      <div class="items style1 medium onscroll-fade-in">
+        <% 3.times do |i| %>
+          <section class="category_normal">
+            <span class="icon style2 major fa-diamond"></span>
+            <h3><%= Category.where(id: i+7).first.text %></h3>
+          </section>
+        <% end %>
+      </div>
+
+
+
+    </div>
+
+
+  </section>
+  <section class="wrapper style1 align-center">
+
+    <div class="inner medium">
+
+      <ul class="actions special">
+        <li><input type="submit" name="submit" class="category_submit" id="submit" value="선택 완료" /></li>
+      </ul>
+    </div>
+  </section>
+
+
+
+</div>
